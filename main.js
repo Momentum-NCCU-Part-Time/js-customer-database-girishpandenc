@@ -4,19 +4,35 @@ function customerDirectoryCard(customer){
   let customerCard = document.createElement('div');
   let customerPhoto = document.createElement('img');
   let customerName = document.createElement('h2');
-  let customerEmail = document.createElement(`address`);
-  let customerInfo = document.createElement('p')
-  customerName.innerText = `${customer.name.first} ${customer.name.last}`;
-  customerPhoto.src = `${customer.picture.large}`;
-  customerEmail.innerText = `${customer.email}`;
-  customerInfo.innerText = `${customer.location.street.number} ${customer.location.street.name} 
-  ${customer.location.city}, ${customer.location.state} ${customer.location.postcode}
-  DOB: ${customer.dob.date}
-  Customer since: ${customer.registered.date}`;
+  let customerEmail = document.createElement('address');
+  let customerInfo = document.createElement('ul');
+  let address1 = document.createElement('li');
+  let address2 = document.createElement('li');
+  let dob = document.createElement('li')
+  let regDate = document.createElement('li');
+
+  let customerNameText = customer.name.first.charAt(0).toUpperCase() + customer.name.first.slice(1) 
+  + " " + customer.name.last.charAt(0).toUpperCase() + customer.name.last.slice(1);
+  
+  customerName.innerText = customerNameText;
+  customerPhoto.src = customer.picture.large;
+  customerEmail.innerText = customer.email;
+  address1.innerText = customer.location.street.number + " " + customer.location.street.name; 
+  address2.innerText = customer.location.city + ", " + nameToAbbr(customer.location.state) + " " + customer.location.postcode;
+  dob.innerText = "DOB: " + moment(customer.dob.date).format("MMM D, YYYY") ;
+  regDate.innerText = "Customer since: " + moment(customer.registered.date).format("MMM D, YYYY");
+
+  customerInfo.appendChild(address1);
+  customerInfo.appendChild(address2);
+  customerInfo.appendChild(dob);
+  customerInfo.appendChild(regDate);
+
+
   customerCard.appendChild(customerPhoto);
   customerCard.appendChild(customerName);
   customerCard.appendChild(customerEmail);
   customerCard.appendChild(customerInfo);
+
   customerContainer.appendChild(customerCard)
   }
 
