@@ -14,6 +14,16 @@ function customerDirectoryCard(customer){
   let customerNameText = customer.name.first.charAt(0).toUpperCase() + customer.name.first.slice(1) 
   + " " + customer.name.last.charAt(0).toUpperCase() + customer.name.last.slice(1);
   
+  customerCard.classList.add("customer-card");
+  customerPhoto.classList.add("customer-photo");
+  customerName.classList.add("customer-name");
+  customerInfo.classList.add("customer-info");
+  customerEmail.classList.add("customer-email");
+  address1.classList.add("address1");
+  address2.classList.add("address2");
+  dob.classList.add("dob");
+  regDate.classList.add("reg-date");
+
   customerName.innerText = customerNameText;
   customerPhoto.src = customer.picture.large;
   customerEmail.innerText = customer.email;

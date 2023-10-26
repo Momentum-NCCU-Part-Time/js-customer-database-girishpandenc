@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@400;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.customer-info {
+  list-style: none;
+}
+.customer-name {
+  font-size: 20px;
+  font-family: "Oswald", Open Sans;
+  padding: 10px;
+}
+.customer-email {
+  padding: 5px;
+  color:gray;
+}
+.dob {
+  padding-top: 10px;
+}
+img {
+  padding-top: 40px;
+  border-top-left-radius: 75%;
+  border-bottom-right-radius: 75%;
+  border-top-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+.customer-card {
+  padding-left: 50px;
+  text-align: center;
+}
+.address1 {
+  padding-top: 5px;
+}
